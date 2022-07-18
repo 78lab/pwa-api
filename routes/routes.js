@@ -4,6 +4,7 @@ const router = express.Router();
 
 //Post Method
 router.post('/post', async (req, res) => {
+    console.log(`post s ${req.body.name}`);
     const data = new Model({
         name: req.body.name,
         age: req.body.age
@@ -32,8 +33,10 @@ router.get('/getAll', async (req, res) => {
 //Get by ID Method
 router.get('/getOne/:id', async (req, res) => {
     try {
+        console.log("getone s")
         const data = await Model.findById(req.params.id);
         res.json(data)
+        console.log("getone e")
     }
     catch (error) {
         res.status(500).json({ message: error.message })
