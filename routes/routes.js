@@ -2,7 +2,7 @@ const express = require('express');
 const Model = require('../models/model');
 const router = express.Router();
 
-//Post Method
+//Post Method tets
 router.post('/post', async (req, res) => {
     console.log(`post s ${req.body.name}`);
     const data = new Model({
